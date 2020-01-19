@@ -1,0 +1,108 @@
+
+
+//@mixin fontAwesomeRegular {font-family: Font Awesome 5 Free; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; }
+
+
+@mixin fontAwesomeRegular {@extend .fas;}
+
+// absolute position center align x-axis 
+@mixin absoluteCenterX {position:absolute; left:0; right:0; margin:auto;}
+
+// absolute position center align Y-axis 
+@mixin absoluteCenterY {  position: absolute; top: 50%; transform: translateY(-50%);}
+
+//absolute position center align both horizontally and vertically
+@mixin absoluteCenterXY {  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+
+// --------------------- Extras
+
+@mixin translateX($translatex) {
+  -moz-transform: translateX($translatex);
+  -webkit-transform: translateX($translatex);
+  -ms-transform: translateX($translatex);
+  -o-transform: translateX($translatex);
+  transform: translateX($translatex);
+}
+
+@mixin scale($scale:2) {
+  -moz-transform: scale($scale);
+  -webkit-transform: scale($scale);
+  -o-transform: scale($scale);
+  -ms-transform: scale($scale);
+  transform: scale($scale);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@mixin table {display:table; width:100%;}
+@mixin tableCell {display:table-cell; vertical-align:middle;}
+
+// BootStrap Core variables and mixins
+@mixin clearFix { clear:both; overflow:hidden;}
+@mixin addonDiv {content:""; position:absolute; display:block; background-color:$red;}
+@mixin floatCenter {float:none; margin-left:auto; margin-right:auto;}
+@mixin noPositioning {top:auto; right:auto; bottom:auto; left:auto;}
+
+@mixin transitionSlow($args:all .5s ease-in) {-webkit-transition: $args; -moz-transition: $args; -ms-transition: $args; -o-transition: $args; transition: $args; }
+@mixin transitionSlower($args:all 3s linear) {-webkit-transition: $args; -moz-transition: $args; -ms-transition: $args; -o-transition: $args; transition: $args; }
+@mixin transitionSlowest($args:all 4s linear) {-webkit-transition: $args; -moz-transition: $args; -ms-transition: $args; -o-transition: $args; transition: $args; }
+@mixin transition($args:all .3s linear) {-webkit-transition: $args; -moz-transition: $args; -ms-transition: $args; -o-transition: $args; transition: $args; }
+@mixin transitionFast($args:all .1s linear) {-webkit-transition: $args; -moz-transition: $args; -ms-transition: $args; -o-transition: $args; transition: $args; }
+@mixin transitionEaseOut($args:all .3s ease-out) {-webkit-transition: $args; -moz-transition: $args; -ms-transition: $args; -o-transition: $args; transition: $args; }
+
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, $grey, 35%)) {
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+  
+  scrollbar-face-color: $foreground-color;
+	scrollbar-track-color: $background-color;
+
+}
+
+
+// landscape medie queries
+
+  $ipad: '(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1)';
+  $iphone6plus: '(min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape)';
+  $iphone6: '(min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)';
+  $iphoneX: '(min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape)';
+
+
+  @mixin landscape($media) {
+      @media only screen and #{$media} {
+          @content;
+      }
+  }
+  //usage example: @include landscape($iphone6) {...}
+
+
+
+@mixin box-shadow {box-shadow:0px 0px 4px #E8E8E8; }
+
+

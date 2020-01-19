@@ -1,0 +1,29 @@
+{
+  "name": "scssboilerplate",
+  "version": "1.5.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "dart-sass": "^1.22.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xell12686/sassBoiler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xell12686/sassBoiler/issues"
+  },
+  "homepage": "https://github.com/xell12686/sassBoiler#readme"
+}

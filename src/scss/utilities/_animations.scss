@@ -1,0 +1,54 @@
+
+/*  WIDEN on page LOAD with sequential options make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes widen { from { width:1px; } to {width:200px; opacity:1;} }
+@-moz-keyframes widen { from { width:1px; } to {width:200px; opacity:1;} }
+@keyframes widen { from { width:1px; } to { width:200px; opacity:1;} }
+
+@mixin widen {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:widen ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:widen ease-in 1;
+  animation:widen ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:.5s;
+  -moz-animation-duration:.5s;
+  animation-duration:.5s;
+}
+
+/* svg animation */
+ 
+@mixin drawPath {
+   stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1.6s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* animation delays */
+
+$baseDelay: 0.5s;
+@mixin delay0 { @include animationDelay($baseDelay * 0) }
+@mixin delay1 { @include animationDelay($baseDelay * 1) }
+@mixin delay2 { @include animationDelay($baseDelay * 2) }
+@mixin delay3 { @include animationDelay($baseDelay * 3) }
+@mixin delay4 { @include animationDelay($baseDelay * 4) }
+@mixin delay5 { @include animationDelay($baseDelay * 5) }
+@mixin delay6 { @include animationDelay($baseDelay * 6) }
+@mixin delay7 { @include animationDelay($baseDelay * 7) }
+
+
+@mixin animationDelay ($delay: 0s) {
+  -webkit-animation-delay: $delay; -moz-animation-delay:$delay; animation-delay: $delay; 
+}
+
+
+
